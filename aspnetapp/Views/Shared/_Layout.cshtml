@@ -15,6 +15,12 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+<script>
+function setHref() {
+document.getElementById('modify-me').href = window.location.protocol + "//" + window.location.hostname + ":3000";
+}
+</script>
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -31,8 +37,15 @@
                 <ul class="nav navbar-nav">
                     
                     <li><a asp-area="" asp-controller="Home" asp-action="About">Hello World</a></li>
-                    <li><a href="https:/localhost:3000/login">Grafana Dashboard</a></li>
-                  
+                    <li><a href="https:/localhost:3000/">Grafana Dashboard</a></li>
+            
+
+<body onload="setHref()">
+<a href="/other/" id="modify-me">Look at another port</a>
+</body>
+
+
+
                 </ul>
             </div>
         </div>
